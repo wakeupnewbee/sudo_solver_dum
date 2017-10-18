@@ -30,6 +30,17 @@ int check(int box[][10], int x, int y){
             return 0;
         }
     }
+    
+    int i_x = set_bound(x);
+    int i_y = set_bound(y);
+    for(int check_y=i_y-3;check_y<i_y;check_y++){
+        for(int check_x=i_x-3;check_x<i_x;check_x++){
+            if(box[x][y]==box[check_x][check_y]&& check_y!=y && check_x!= x){
+                return 0;
+            }
+        }
+    }
+    
     return 1;
 }
 
