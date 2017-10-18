@@ -95,6 +95,7 @@ int initial(int box[][10]){
             box[x][y]=convert;
         }
     }
+    return count_left;
 }
 
 
