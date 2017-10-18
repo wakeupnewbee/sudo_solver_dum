@@ -32,20 +32,13 @@ void f_s(int box[][10],int x,int y,int* left){
         for(int n=1; n<10; n++){
             box[x][y]=n;
             if(check(box,x,y)){
-            	cout << "Write into the matrix" << endl;
                 *left = *left - 1;
                 if(x<=8){
                     f_s(box,x+1,y,left);
-                    if(*left==0){
-                        return;
-                    }
-                    //*left = *left + 1;
                 }else{
                     f_s(box,1,y+1,left);//process to the next
-                    if(*left==0){
-                        return;
-                    }
                 }
+                if(*left==0) return;
             }
         }
         *left = *left + 1;
@@ -53,10 +46,11 @@ void f_s(int box[][10],int x,int y,int* left){
         return;
     }else{
         if(x<10){
-            f_s(box,++x,y,left);
+            f_s(box,x+1,y,left);
         }else{
-            f_s(box,1,++y,left);
+            f_s(box,1,y+1,left);
         }
+        return;
     }
 }
 
@@ -64,7 +58,17 @@ void f_s(int box[][10],int x,int y,int* left){
 
 int main()
 {
-    int box[10][10]={{0}};
+    int box[10][10]={
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0}};
 
     int left = 81;
     f_s(box,1,1,&left);
