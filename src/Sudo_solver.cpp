@@ -70,7 +70,7 @@ void f_s(int box[][10],int x,int y,int* left){
         box[x][y]=0;
         return;
     }else{
-        if(x<10){
+        if(x<=8){
             f_s(box,x+1,y,left);
         }else{
             f_s(box,1,y+1,left);
