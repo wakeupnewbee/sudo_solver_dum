@@ -9,6 +9,16 @@
 #include <iostream>
 using namespace std;
 
+int set_bound(int num){
+    if(num<=3){
+        return 4;
+    }else if(3<num<=6){
+        return 7;
+    }else{
+        return 10;   
+    }
+}
+
 int check(int box[][10], int x, int y){
     for(int idx=1; idx<10;idx++){
         if(box[x][y]==box[idx][y]&& idx!=x){
