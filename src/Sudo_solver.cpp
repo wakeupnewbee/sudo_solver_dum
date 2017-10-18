@@ -78,7 +78,7 @@ void f_s(int box[][10],int x,int y,int* left){
 }
 
 int initial(int box[][10]){
-    ifstream file("raw.txt");
+    ifstream file("evil.txt");
     string line;
     int convert;
     int count_left=81;
@@ -128,4 +128,3 @@ int main()
 
     return 0;
 }
-
