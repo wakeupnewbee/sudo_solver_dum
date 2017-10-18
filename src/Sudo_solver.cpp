@@ -7,6 +7,9 @@
 //============================================================================
 
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
 using namespace std;
 
 int set_bound(int num){
@@ -76,6 +79,23 @@ void f_s(int box[][10],int x,int y,int* left){
     }
 }
 
+int initial(int box[][10]){
+    ifstream file("raw.txt");
+    string line;
+    int convert;
+    int count_left=81;
+    for(int y=1; y<10; y++){
+        getline(file,line);
+        istringstream bubble(line);
+        for(int x=1; x<10; x++){
+            bubble >> convert;
+            if(convert!=0){
+                count_left--;
+            }
+            box[x][y]=convert;
+        }
+    }
+}
 
 
 int main()
