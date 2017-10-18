@@ -12,7 +12,7 @@ using namespace std;
 int set_bound(int num){
     if(num<=3){
         return 4;
-    }else if(3<num<=6){
+    }else if(num>3 && num<=6){
         return 7;
     }else{
         return 10;   
