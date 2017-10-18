@@ -33,10 +33,9 @@ int check(int box[][10], int x, int y){
             return 0;
         }
     }
-    
     int i_x = set_bound(x);
     int i_y = set_bound(y);
-    cout << i_x << " "<< i_y;
+    //cout << i_x << " "<< i_y;
     for(int check_y=i_y-3;check_y<i_y;check_y++){
         for(int check_x=i_x-3;check_x<i_x;check_x++){
             if(box[x][y]==box[check_x][check_y]&& check_y!=y && check_x!= x){
@@ -44,7 +43,6 @@ int check(int box[][10], int x, int y){
             }
         }
     }
-    
     return 1;
 }
 
@@ -98,7 +96,6 @@ int initial(int box[][10]){
     return count_left;
 }
 
-
 int main()
 {
     int box[10][10]={
@@ -112,14 +109,19 @@ int main()
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0}};
-
     int left = 81;
-    f_s(box,1,1,&left);
+    //f_s(box,1,1,&left);
     cout<< "Done recursion" << endl;
+    
+    //check:
+    int box2[10][10];
+    left = initial(box2);
+    cout << left << endl;
+    f_s(box2,1,1,&left);
 
     for(int m=1;m<10;m++){
         for(int n=1;n<10;n++){
-            cout << box[n][m] <<" ";
+            cout << box2[n][m] <<" ";
         }
         cout << endl;
     }
